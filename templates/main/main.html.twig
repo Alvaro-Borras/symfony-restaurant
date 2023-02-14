@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}   
+{% block stylesheet %}
+ {{ include('includes/header.html.twig') }}
+ {% endblock %}
+{% block body %}
+
+
+     <h1 class="text-center d-flex align-item-center justify-content-center py-2"><img class="" src="styles/logo-restaurant-principal.svg"></img></h1>
+
+    <div class="row mx-auto mt-5 d-flex flex-column text-center align-content-center justify-content-center bg-transparent flex-wrap" style="width:300px; height:200px;">
+        <div class="mx-auto p-2"><a href="/menu" class="btn btn-outline-primary text-center" type="button" >CREA TU MENU</a></div>
+        <div class="mx-auto p-3"><a href="/catalog" class="btn btn-outline-primary text-center" type="button" >Administrar catalog (solo admin)</a></div>
+        <div class="mx-auto p-2"><a href="/listTickets" class="btn btn-outline-primary text-center" type="button" >Tickets List (solo admin)</a></div>
+    </div>
+    
+ <footer>
+  <div id="footer">
+      <p id="arreglo">AMA Company S.A</p>
+  </div>
+</footer>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+{% endblock %}

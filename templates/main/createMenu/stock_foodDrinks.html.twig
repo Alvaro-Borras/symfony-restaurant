@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}
+{% block stylesheet %}
+	{{ include('includes/header.html.twig') }}
+{% endblock %}
+{% block body %}
+	<a id="a" href="/"><h1 class="m-0 row justify-content-center">STOCK FOODDRINKS</h1></a>
+	<center>
+		<table class="table table-striped mt-5 justify-content-center align-items-center">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nombre FoodDrinks</th>
+					<th scope="col">Stock</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Burguer</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Frijoles</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Tortilla</td>
+					<td>35</td>
+				</tr>
+				<tr>
+					<th scope="row">4</th>
+					<td>Ternera</td>
+					<td>48</td>
+				</tr>
+			</tbody>
+		</table>
+		<input class="btn btn-warning" type="button" value="Retroceder">
+		<input class="btn btn-warning" type="button" value="Siguiente">
+	</center>
+	<footer>
+		<div id="footer">
+			<p id="arreglo">AMA Company S.A</p>
+		</div>
+	</footer>
+{% endblock %}
+{% block javascripts %}
+	{# <script src="{{asset('styles/js/jquery.js')}}"></script> #}
+	<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}
+{% block stylesheet %}
+	{{ include('includes/header.html.twig') }}
+{% endblock %}
+{% block body %}
+	<a id="a" href="/"><h1 class="m-0 row justify-content-center">Tickets listados</h1></a>
+
+	<a href="/listTickets" type="submit" class=" btn btn-outline-primary align-items-center mx-auto d-flex justify-content-center text-center mt-5 " style="width:10%;" id="btnSubmit" >
+      <strong>Atrás</strong>
+    </a>
+	<div class="container align-items-center d-flex flex-column justify-content-center rounded mt-5 w-25">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Ticket</th>
+					<th scope="col">Line</th>
+					<th scope="col">Date</th>
+					{# <th scope="col">Item</th>
+					<th scope="col">Price</th> #}
+				</tr>
+			</thead>
+			<tbody>
+		{% for ticket in tickets %}
+          <tr>
+		  <td>{{ticket.id_T}}</td>
+		  {# <td>{{ticket.numL}}</td> #}
+		  <td>{{ticket.people}}</td>
+		  <td>{{ticket.datic}}</td>
+
+
+		{# {% for ticket in tickets1 %}
+		  <td>{{ticket}}</td>
+		{% endfor %} #}
+		  {# <td>{{ticket.getAll()}}</td> #}
+            {# <td>{{ticket.id_T()}}</td> #}
+            {# <td>{{ticket.people()}}</td> #}
+            {# <td>{{ticket.getDatic()}}</td> #}
+            {# <td>{{ticket.get()}}</td> #}
+            {# <td>{{ticket.getPrice()}}</td> #}
+            {# <td>{{cat.getStock()}}</td>
+            <td>{{cat.getStockMin()}}</td> #}   
+          </tr>
+		{% endfor %}
+			</tbody>
+		</table>		
+	</div>
+	<footer>
+		<div id="footer">
+			<p id="arreglo">AMA Company S.A</p>
+		</div>
+	</footer>
+{% endblock %}
+{% block javascripts %}
+	{# <script src="{{asset('styles/js/jquery.js')}}"></script> #}
+	<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+{% endblock %}

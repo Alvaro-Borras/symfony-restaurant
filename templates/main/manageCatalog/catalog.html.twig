@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}   
+{% block stylesheet %}
+ {{ include('includes/header.html.twig') }}
+ {% endblock %}
+{% block body %}
+<body>
+   <a id="a" href="/"><h1 class="m-0 row justify-content-center">CATALOGO</h1></a>
+   <center> 
+   <div class="container mt-5">
+   <table class="table table-hover table-fixed">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th class="d-flex justify-content-center">Acciones</th>
+            {# <th>Stock actual</th> #}
+            {# <th>Stock minimo</th> #} 
+
+          </tr>
+        </thead>
+        <tbody>
+			{% for cat in catalog %}
+          <tr>
+            <th>{{cat.getIdF()}}</th>
+            <td>{{cat.getItem()}}</td>
+            <td>{{cat.getCategory()}}</td>
+            <td>{{cat.getPrice()}}</td>
+            {# <td>{{cat.getStock()}}</td>
+            <td>{{cat.getStockMin()}}</td> #}
+            <td>
+            <span class="d-flex justify-content-evenly">
+            <a href="/delete/{{cat.getIdF()}}"><input class="btn btn-danger" type="button" value="Eliminar"></a>
+            <a href="/modifyItem/{{cat.getIdF()}}"><input class="btn btn-warning" type="button" value="Modificar"></a>
+            </span>
+            </td>
+          </tr>
+			{% endfor %}
+        </tbody>
+  </table>
+  </div>
+      <p><a class="btn btn-warning" href="/newItem">Añade un nuevo item </a></p>
+    
+      <a href="/"><input class="btn btn-warning" type="button" value="Página Principal"></a>
+    </center>
+    <footer>
+        <div id="footer">
+            <p id="arreglo">AMA Company S.A</p>
+        </div>
+    </footer>
+{% endblock %}
+{% block javascripts %}
+{# <script src="{{asset('styles/js/jquery.js')}}"></script> #}
+<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+{% endblock %}
+

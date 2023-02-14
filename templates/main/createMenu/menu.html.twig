@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}   
+{% block stylesheet %}
+ {{ include('includes/header.html.twig') }}
+ {% endblock %}
+{% block body %}
+   <a id="a" href="/"><h1 class="m-0 row justify-content-center">CREA TU MENU</h1></a>
+   <center> 
+  <div class="container mt-5">
+   <table class="table table-hover table-fixed">
+      <thead>
+          <tr>
+            <th>Producto</th>
+            {# <th>Descripción</th> #}
+            <th>Categoria</th>
+            <th>Precio</th>     
+            <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+			{% for cat in catalog %}
+          <tr>
+            <td>{{cat.getItem()}}</td>
+            <td>{{cat.getCategory()}}</td>
+            <td>{{cat.getPrice()}}</td>
+            {# <td>{{cat.getStock()}}</td>
+            <td>{{cat.getStockMin()}}</td> #}
+            <td><a href="/add/{{cat.getIdF()}}"><input class="btn btn-warning" type="button" value="Añadir"></a></td>
+          </tr>
+			{% endfor %}
+      </tbody>
+    </table>
+  </div>
+      <p>Tu orden contiene  <b>{{ total }}</b> items <a class="btn btn-warning" href="/cart">Ver</a></p>
+      <input class="btn btn-warning" type="button" value="Página Principal">
+    </center>
+    <footer>
+      <div id="footer">
+          <p id="arreglo">AMA Company S.A</p>
+      </div>
+    </footer>
+{% endblock %}
+{% block javascripts %}
+{# <script src="{{asset('styles/js/jquery.js')}}"></script> #}
+<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}
+{% block stylesheet %}
+	{{ include('includes/header.html.twig') }}
+{% endblock %}
+{% block body %}
+	<a id="a" href="/"><h1 class="m-0 row justify-content-center">Crear un item nuevo</h1></a>
+	<div class="container custom-container align-items-center d-flex justify-content-center rounded">
+		{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+			<div class="form-group">
+				{{ form_label(form.item, 'Item', {'label_attr': {'class': 'control-label col-sm-4'}}) }}
+				<div class="col-sm-10 w-100">
+				{{ form_widget(form.item, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.price, 'Price', {'label_attr': {'class': 'control-label col-sm-4'}}) }}
+				<div class="col-sm-10 w-100">
+				{{ form_widget(form.price, {'attr': {'class': 'form-control','max':'100', 'min':'0'}}) }}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.category, 'Category', {'label_attr': {'class': 'control-label col-sm-4'}}) }}
+				<div class="col-sm-10 w-100">
+				{{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.stock, 'Stock', {'label_attr': {'class': 'control-label col-sm-4'}}) }}
+				<div class="col-sm-10 w-100">
+				{{ form_widget(form.stock, {'attr': {'class': 'form-control','max':'100', 'min':'0'}}) }}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.stock_min, 'Stock Mínimo', {'label_attr': {'class': 'control-label col-sm-4'}}) }}
+				<div class="col-sm-10 w-100">
+				{{ form_widget(form.stock_min, {'attr': {'class': 'form-control','max':'100', 'min':'0'}}) }}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+				{{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success'}}) }}				
+				</div>
+			</div>
+			<div class="form-group">
+			<a href="/catalog" type="submit" class=" btn btn-outline-primary align-items-center mx-auto d-flex justify-content-center text-center mt-5" id="btnSubmit" ><strong>Volver al catalogo</strong></a> 
+			</div>
+		{{ form_end(form) }}
+		<br>   
+				{# <a hr><input class="btn btn-warning" type="button" value="Página Principal"> #}
+    </div>
+  
+      <footer>
+        <div id="footer">
+            <p id="arreglo">AMA Company S.A</p>
+        </div>
+    </footer>
+	{% endblock %}
+	{% block javascripts %}
+		{# <script src="{{asset('styles/js/jquery.js')}}"></script> #}
+		<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+	{% endblock %}

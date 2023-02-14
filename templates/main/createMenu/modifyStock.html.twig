@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant 🍴{% endblock %}   
+{% block stylesheet %}
+ {{ include('includes/header.html.twig') }}
+ {% endblock %}
+{% block body %}
+
+    <a id="a" href="/"><h1 class="m-0 row justify-content-center">MODIFICAR STOCK</h1></a>
+    <div class="container align-items-center d-flex justify-content-center">
+        <form class="my-1 mr-2" action="#">            
+            <label for="lang">Nombre del producto</label>
+            <select class="w-100" name="ProdName" id="lang">
+              <option value="1">Tortilla</option>
+              <option value="2">Café</option>
+              <option value="4">Pizza</option>
+              <option value="9">Macarrones</option>
+              <option value="3">Finguers Queso</option>
+              <option value="987">Hamburguesa pollo</option>
+              <option value="15">Paella</option>
+            </select>
+            <br>
+            <br>
+            <label for="lang">Stock</label>
+            <input class="w-100" type="number" id="stockactual" name="stock"min="1" max="1000" disabled>
+            <br>
+            <br>
+            <label for="lang">Stock nuevo</label>
+            <input class="w-100" type="number" id="stockactual" name="stock"min="1" max="1000">
+            <br><br> <br>
+            <center><input type="submit" value="Aceptar" class="btn btn-warning" onclick="alert('Actualizado el producto $producto al Stock')" /></center>
+      </form>     
+
+    </div>
+    <footer>
+        <div id="footer">
+            <p id="arreglo">AMA Company S.A</p>
+        </div>
+    </footer>
+{% endblock %}
+{% block javascripts %}
+{# <script src="{{asset('styles/js/jquery.js')}}"></script> #}
+<script src="{{asset('styles/js/bootstrap.min.js')}}"></script>
+{% endblock %}
